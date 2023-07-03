@@ -1,0 +1,129 @@
+
+.card svg.material-icons path {
+  fill: #888;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.card {
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  height: 500px;
+  width: 500px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+.card-container .card:not(:last-child) {
+  margin-right: 0;
+}
+
+.card.card-small {
+  height: 16px;
+  width: 168px;
+}
+
+.card-container .card:not(.highlight-card) {
+  cursor: pointer;
+}
+
+.card-container .card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.card-container .card:not(.highlight-card):hover .material-icons path {
+  fill: rgb(105, 103, 103);
+}
+
+.card.highlight-card {
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: auto;
+  min-width: 30%;
+  position: relative;
+}
+
+.card.card.highlight-card span {
+  margin-left: 60px;
+}
+
+
+.rojo {
+  border-right: 5px solid red;
+}
+
+.verde {
+  border-right: 5px solid green;
+}
+
+.amarillo {
+  border-right: 5px solid yellow;
+}
+
+#image {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+ul {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  margin: 0px;
+
+  li {
+    list-style-type: none;
+    display: inline;
+    padding-right: 5px;
+    color: gray;
+  }
+
+  li:last-child {
+    strong {
+      display: none;
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.card-container-h {
+  height: 550px;
+}
+
+@media screen and (max-width: 767px) {
+  a {
+    display: flex;
+    text-align: center;
+    flex-flow: row wrap;
+    flex-direction: row-reverse;
+
+    img,
+    #categoria {
+      display: none;
+    }
+  }
+
+  .card-container-h {
+    height: 200px;
+  }
+}
+
+

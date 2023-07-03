@@ -1,0 +1,36 @@
+
+<section class="contact section" id="contact">
+  <h2 class="section__title">Login</h2>
+  <div class="contact__container container grid section_border">
+
+    <div class="contact__content">
+      <h3 class="contact__title"></h3>
+      <form action="" class="contact__form" id="contact-form"  [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="contact__form-div">
+          <label class="contact__form-tag">Username</label>
+          <label *ngIf="submitted && f['nick'].errors" class="contact__form-tag error">Username is required</label>
+          <input type="text" name="nick" formControlName="nick"  class="contact__form-input">
+
+        </div>
+        <div class="contact__form-div">
+          <label class="contact__form-tag">Password</label>
+          <label *ngIf="submitted && f['password'].errors" class="contact__form-tag error">Password is required</label>
+          <input type="password" name="password" formControlName="password" class="contact__form-input" autocomplete="on">
+        </div>
+        <button type="submit" class="contact__button" >
+          Login <i class="ri-arrow-right-up-line"></i>
+        </button>
+
+
+        <button type="button"  class="contact__button" [routerLink]="[ '/signup' ]" routerLinkActive="active" > Sing Up
+        <i class="ri-arrow-right-up-line"  ></i>
+        </button>
+        <div class="contact__form-div"></div>
+      </form>
+
+    </div>
+
+  </div>
+
+
+</section>

@@ -1,0 +1,27 @@
+.footer__container{
+  padding: 3rem 0 7rem;
+  text-align: center;
+  width: 100%;
+  position: initial;
+  bottom: 2rem;
+  left: 0;
+  z-index: 1;
+}
+
+.footer__title{
+  font-size:  1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer__copy{
+  display: block;
+  margin-top: 1.5rem;
+  font-size: .75rem;
+  color:  #848A8EFF;
+}
+@media screen and (max-width: 767px) {
+  .footer__container{
+    display: none;
+  }
+}
