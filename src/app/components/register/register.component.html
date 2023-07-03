@@ -1,0 +1,30 @@
+<section class="contact section" id="contact">
+  <h2 class="section__title">Iniciar Sesión</h2>
+  <div class="contact__container container grid section_border">
+
+    <div class="contact__content">
+      <h3 class="contact__title"></h3>
+      <form action="" class="contact__form" id="contact-form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+         <div class="contact__form-div"
+              *ngFor="let field of fields; let i = index">
+           <label class="contact__form-tag">{{data[i].text}}</label>
+           <label *ngIf="submitted && f[field].errors" class="contact__form-tag error">{{data[i].text}} is required</label>
+           <input type="{{data[i].type}}" class="contact__form-input" [formControlName]="field">
+         </div>
+         <button type="submit" class="contact__button">
+           Sign up <i class="ri-arrow-right-up-line"></i>
+         </button>
+         <button type="button" class="contact__button" [routerLink]="['/']" routerLinkActive="active"> Login
+           <i class="ri-arrow-right-up-line"></i>
+         </button>
+
+        <div class="contact__form-div"></div>
+      </form>
+
+    </div>
+
+  </div>
+
+
+</section>
