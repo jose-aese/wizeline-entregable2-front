@@ -8,6 +8,7 @@ import {LoginUserActions} from "../../actions/user.actions";
 import {Store} from '@ngrx/store';
 import {AppState} from 'src/app/app.reducer';
 import {User} from 'src/app/models/userReducer.model';
+import { NotificacionService } from 'src/app/services/notificacion.service';
 
 @Component({
   selector: 'login-component',
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private ngZone: NgZone,
     private store: Store<AppState>,
+    private notificacionService:NotificacionService
   ) {
     this.formulario = new FormGroup({
       nick: new FormControl('', [Validators.required]
@@ -52,6 +54,9 @@ export class LoginComponent implements OnInit {
     this._userService.signup(nick, password).subscribe({
       next: (response: User) => {
         this.store.dispatch(new LoginUserActions(response));
+          this.notificacionService.sendMessage({
+            name:nick
+          });
         this.ngZone.run(() => this.router.navigate(['/tiendas'])).then();
       },
       error: (e) => console.error(e),
